@@ -1,0 +1,30 @@
+{% extends 'bas.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h2>BOOK</h2>
+    <table>
+        <tr>
+            <th>COVER</th>
+            <th>TITLE</th>
+            <th>AUTHOR</th>
+            <th>PDF</th>
+        </tr>
+        {% for i in list %}
+        <tr>
+            <td><img src="{{i.cover.url}}" width="100" height="100" alt=""></td>
+            <td>{{i.title}}</td>
+            <td>{{i.author}}</td>
+            <td><a href="{{i.pdf.url}}">DOWNLOAD</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>
